@@ -112,7 +112,7 @@ line-height:14pt;
 }
 
 #sidebar {
-float:center;
+float:left;
 width:265px;
 background-image:url(images/sidebartop.png);
 background-repeat:no-repeat;
