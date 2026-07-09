@@ -45,69 +45,41 @@
     </div>
 </header>
 
-<!-- Ocean-Style Signal Strip -->
-<div class="relative w-full overflow-hidden opacity-30">
-    <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-        <!-- 
-            LAYER 1: The "Pulse Texture" (Full Width)
-            The ticks are now much denser and span the entire width.
-            They are grouped in pairs to look like consistent 'pulses'.
-        -->
-        <g fill="#6366f1" opacity="0.4">
-            <!-- Sequence of pulses covering 0 to 1440 -->
-            <!-- (Each "block" is a pair of ticks with a small gap) -->
-            <rect x="10" width="8" height="90" /> <rect x="25" width="8" height="90" />
-            <rect x="60" width="8" height="90" /> <rect x="75" width="8" height="90" />
-            <rect x="120" width="8" height="90" /> <rect x="135" width="8" height="90" />
-            <rect x="180" width="8" height="90" /> <rect x="195" width="8" height="90" />
-            <rect x="240" width="8" height="90" /> <rect x="255" width="8" height="90" />
-            <rect x="300" width="8" height="90" /> <rect x="315" width="8" height="90" />
-            <rect x="360" width="8" height="90" /> <rect x="375" width="8" height="90" />
-            <rect x="420" width="8" height="90" /> <rect x="435" width="8" height="90" />
-            <rect x="480" width="8" height="90" /> <rect x="495" width="8" height="90" />
-            <rect x="540" width="8" height="90" /> <rect x="555" width="8" height="90" />
-            <rect x="600" width="8" height="90" /> <rect x="615" width="8" height="90" />
-            <rect x="660" width="8" height="90" /> <rect x="675" width="8" height="90" />
-            <rect x="720" width="8" height="90" /> <rect x="735" width="8" height="90" />
-            <rect x="780" width="8" height="90" /> <rect x="795" width="8" height="90" />
-            <rect x="840" width="8" height="90" /> <rect x="855" width="8" height="90" />
-            <rect x="900" width="8" height="90" /> <rect x="915" width="8" height="90" />
-            <rect x="960" width="8" height="90" /> <rect x="975" width="8" height="90" />
-            <rect x="1020" width="8" height="90" /> <rect x="1035" width="8" height="90" />
-            <rect x="1080" width="8" height="90" /> <rect x="1095" width="8" height="90" />
-            <rect x="1140" width="8" height="90" /> <rect x="1155" width="8" height="90" />
-            <rect x="1200" width="8" height="90" /> <rect x="1215" width="8" height="90" />
-            <rect x="1260" width="8" height="90" /> <rect x="1275" width="8" height="90" />
-            <rect x="1320" width="8" height="90" /> <rect x="1335" width="8" height="90" />
-        </g>
+<!-- Buttons & Signal Ribbon Section -->
+<div class="relative pt-8">
+    <!-- The Button Row -->
+    <div class="max-w-4xl mx-auto px-6 flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+        <a href="mailto:wibr@tf.uni-kiel.de" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">Contact</a>
+        <a href="https://scholar.google.com/citations?user=tA4Og3kAAAAJ&hl=en" target="_blank"  class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">Google Scholar</a>
+        <a href="https://bsky.app/profile/wilhelmbraun.bsky.social" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">Bluesky</a>
+        <a href="https://orcid.org/0000-0002-9419-3311" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">ORCID</a>
+    </div>
+  <!-- The "Modulated Signal" Background Strip -->
+    <div class="relative w-full overflow-hidden opacity-30">
+        <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <path 
+                fill="none" 
+                stroke="#6366f1" 
+                stroke-width="3" 
+                stroke-linecap="round"
+                d="M0,100 C40,150 80,50 120,100 C160,150 200,50 240,100 C280,150 320,50 360,100 C400,150 440,50 480,100 C520,150 560,50 600,100 C640,150 680,50 720,100 C760,150 800,50 840,100 C880,150 920,50 960,100 C1000,150 1040,50 1080,100 C1120,150 1160,50 1200,100 C1240,150 1280,50 1320,100 C1360,150 1400,50 1440,100" 
+                stroke-dasharray="2,2" 
+                opacity="0.4" />
+            
+            <!-- The primary modulated wave (Single continuous path) -->
+            <path d="M0,100 Q30,150 60,100 T120,100 T180,100 T240,100 T300,100 T360,100 T420,100 T480,100 T540,100 T600,100 T660,100 T720,100 T780,100 T840,100 T900,100 T960,100 T1020,100 T1080,100 T1140,100 T1200,100 T1260,100 T1320,100 T1380,100 T1440,100" 
+            stroke="#6366f1" stroke-width="2" fill="none" />
 
-        <!-- 
-            LAYER 2: The "Main Tide" (Oceanic Sweep)
-            A wide, smooth curve that stays balanced and doesn't spike at the ends.
-        -->
-        <path d="M0,140 C350,60 700,180 1050,120 S1400,80 1440,120" 
-            fill="none" stroke="#6366f1" stroke-width="4" stroke-linecap="round" />
+            <!-- The "Modulated Amplitude" overlay (Creates the swell effect) -->
+            <path d="M0,100 C150,180 300,20 450,100 C600,180 750,20 900,100 C1050,180 1200,20 1350,100" 
+            stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.6" />
 
-        <!-- 
-            LAYER 3: The "Middle Wave" (Secondary Motion)
-            Creates the overlap effect common in water.
-        -->
-        <path d="M0,120 C400,180 800,60 1100,130 S1400,100 1440,100" 
-            fill="none" stroke="#8b5cf6" stroke-width="3" opacity="0.7" stroke-linecap="round" />
+            <!-- A second high-frequency wave for texture -->
+            <path d="M0,100 Q20,80 40,100 T80,100 T120,100 T160,100 T200,100 T240,100 T280,100 T320,100 T360,100 T400,100 T440,100 T480,100 T520,100 T560,100 T600,100 T640,100 T680,100 T720,100 T760,100 T800,100 T840,100 T880,100 T920,100 T960,100 T1000,100 T1040,100 T1080,100 T1120,100 T1160,100 T1200,100 T1240,100 T1280,100 T1320,100 T1360,100 T1400,100 T1440,100" 
+            stroke="#a78bfa" stroke-width="1" fill="none" />
+        </svg>
+    </div>
 
-        <!-- 
-            LAYER 4: The "Ripple" (Small/Fast Movement)
-        -->
-        <path d="M0,100 C200,150 400,50 600,100 T1200,100 T1440,100" 
-            fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.5" stroke-linecap="round" />
-
-        <!-- 
-            LAYER 5: The "Surface Texture" (Micro ripples)
-        -->
-        <path d="M0,110 Q150,90 300,110 T600,110 T900,110 T1200,110 T1440,110" 
-            fill="none" stroke="#c4b5fd" stroke-width="1" opacity="0.3" stroke-linecap="round" />
-    </svg>
-</div>
 
 </div>
  
