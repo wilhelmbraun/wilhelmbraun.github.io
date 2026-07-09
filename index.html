@@ -55,44 +55,56 @@
         <a href="https://orcid.org/0000-0002-9419-3311" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">ORCID</a>
     </div>
 
-<!-- The "Broad Modulated Signal" Background Strip -->
-    <div class="relative w-full overflow-hidden opacity-40 border-y border-slate-100 py-8">
-        <svg viewBox="0 0 1600 300" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-            <!-- Background "Ghost" Trace (Provides the 'Broad' feel - a wider, fainter wave) -->
-            <path d="M0,150 Q400,50 800,150 T1600,150" fill="none" stroke="#cbd5e1" stroke-width="2" opacity="0.3"/>
-
-            <!-- The Primary Amplitude Modulated Wave (The "Carrier") -->
-            <path d="M0,150 C100,50 300,250 400,150 C500,50 700,250 800,150 C900,50 1100,250 1200,150 C1300,50 1500,250 1600,150" 
-                fill="none" stroke="#6366f1" stroke-width="3" />
-
-            <!-- The "Rate-Modulated Spikes" -->
-            <!-- These are clusters of vertical lines. Notice how they only appear/cluster where the curve peaks. -->
-            <g fill="none" stroke="#8b5cf6" stroke-width="1.5">
-                <!-- Cluster 1 (High Amplitude) -->
-                <line x1="200" y1="90" x2="200" y2="130" />
-                <line x1="210" y1="85" x2="210" y2="125" />
-                <line x1="220" y1="100" x2="220" y2="140" />
-                <line x1="235" y1="80" x2="235" y2="120" />
-                <line x1="250" y1="95" x2="250" y2="135" />
-                <line x1="265" y1="110" x2="265" y2="150" />
-                <!-- Gap (Low Amplitude) -->
-                <line x1="480" y1="140" x2="480" y2="150" />
-                <line x1="500" y1="138" x2="500" y2="152" />
-                <!-- Cluster 2 (High Amplitude) -->
-                <line x1="780" y1="80" x2="780" y2="120" />
-                <line x1="795" y1="75" x2="795" y2="115" />
-                <line x1="810" y1="90" x2="810" y2="130" />
-                <line x1="825" y1="85" x2="825" y2="125" />
-                <line x1="840" y1="100" x2="840" y2="140" />
-                <!-- Cluster 3 (High Amplitude) -->
-                <line x1="1180" y1="90" x2="1180" y2="130" />
-                <line x1="1195" y1="85" x2="1195" y2="125" />
-                <line x1="1210" y1="100" x2="1210" y2="140" />
-                <line x1="1225" y1="80" x2="1225" y2="120" />
+ <!-- The "Data & Signal" Visualization -->
+    <div class="relative w-full overflow-hidden opacity-40 border-y border-slate-100 py-8 bg-slate-50/30">
+        <svg viewBox="0 0 1600 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <!-- LAYER 1: The Barcode (The "Raw Data") -->
+            <!-- This uses a repeating pattern of varying widths to create a clean barcode aesthetic -->
+            <g fill="#cbd5e1" opacity="0.6">
+                <rect x="0" y="130" width="8" height="40" />
+                <rect x="16" y="130" width="2" height="40" />
+                <rect x="22" y="130" width="14" height="40" />
+                <rect x="40" y="130" width="4" height="40" />
+                <rect x="50" y="130" width="8" height="40" />
+                <rect x="62" y="130" width="3" height="40" />
+                <rect x="70" y="130" width="12" height="40" />
+                <rect x="85" y="130" width="6" height="40" />
+                <rect x="100" y="130" width="2" height="40" />
+                <rect x="105" y="130" width="10" height="40" />
+                <rect x="120" y="130" width="5" height="40" />
+                <rect x="130" y="130" width="15" height="40" />
+                <!-- Repeat/Variation of barcode pattern -->
+                <rect x="160" y="130" width="8" height="40" />
+                <rect x="172" y="130" width="12" height="40" />
+                <rect x="190" y="130" width="2" height="40" />
+                <rect x="200" y="130" width="6" height="40" />
+                <rect x="215" y="130" width="14" height="40" />
+                <rect x="235" y="130" width="8" height="40" />
+                <rect x="250" y="130" width="3" height="40" />
+                <rect x="260" y="130" width="10" height="40" />
+                <!-- More segments to fill the view -->
+                <rect x="300" y="130" width="14" height="40" />
+                <rect x="320" y="130" width="6" height="40" />
+                <rect x="335" y="130" width="8" height="40" />
+                <rect x="350" y="130" width="10" height="40" />
+                <rect x="370" y="130" width="2" height="40" />
+                <rect x="380" y="130" width="15" height="40" />
+                <!-- (The code would continue with similar rects to fill the 1600px width) -->
+                <!-- For simplicity, I will use a simplified path for the barcode to ensure it fills the space without bloat -->
+                <path d="M400,130 h8 M420,130 h15 M440,130 h3 M460,130 h10 M480,130 h5 M510,130 h12 M530,130 h2 M540,130 h10" stroke="#cbd5e1" stroke-width="8" fill="none" />
+                <path d="M600,130 h10 M620,130 h4 M640,130 h14 M700,130 h9 M720,130 h2 M800,130 h15 M900,130 h8 M1000,130 h6 M1100,130 h12 M1200,130 h4 M1300,130 h10 M1400,130 h15" stroke="#cbd5e1" stroke-width="8" fill="none" />
+                <path d="M20,130 h5 M40,130 h12 M60,130 h7 M100,130 h15 M150,130 h6 M200,130 h9" stroke="#cbd5e1" stroke-width="8" fill="none" />
             </g>
+
+            <!-- LAYER 2: The Modulated Signal (The "Processed Wave") -->
+            <path d="M0,150 C100,50 300,250 400,150 C500,50 700,250 800,150 C900,50 1100,250 1200,150 C1300,50 1500,250 1600,150" 
+                fill="none" stroke="#6366f1" stroke-width="4" />
+            
+            <!-- Optional: A very faint "grid" or "baseline" -->
+            <line x1="0" y1="150" x2="1600" y2="150" stroke="#e2e8f0" stroke-width="1" />
         </svg>
     </div>
-</div>
+   </div>
 
 
  
