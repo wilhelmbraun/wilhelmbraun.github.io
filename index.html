@@ -55,62 +55,70 @@
         <a href="https://orcid.org/0000-0002-9419-3311" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">ORCID</a>
     </div>
     
-<!-- The "Sophisticated Signal" Background Strip -->
+<!-- The "Data Packet" Signal Strip -->
 <div class="relative w-full overflow-hidden opacity-30">
     <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
         <!-- 
-            LAYER 1: The Barcode (Underlayer)
-            Uniform thickness (width=8), varied spacing for "data" look.
+            LAYER 1: The "Data Packets" (Barcode)
+            Instead of even spacing, we use clusters of 3-4 marks 
+            and long gaps to create a "pulsed" data look.
         -->
-        <g fill="#6366f1" opacity="0.4">
+        <g fill="#6366f1" opacity="0.5">
+            <!-- Cluster 1 (Dense) -->
             <rect x="20" width="8" height="150" />
-            <rect x="45" width="8" height="150" />
-            <rect x="75" width="8" height="150" />
-            <rect x="110" width="8" height="150" />
-            <rect x="135" width="8" height="150" />
+            <rect x="30" width="8" height="150" />
+            <rect x="40" width="8" height="150" />
+            <rect x="50" width="8" height="150" />
+            
+            <!-- Gap -->
+            <!-- Cluster 2 (Pair) -->
+            <rect x="150" width="8" height="150" />
             <rect x="165" width="8" height="150" />
-            <rect x="210" width="8" height="150" />
-            <rect x="240" width="8" height="150" />
-            <rect x="275" width="8" height="150" />
-            <rect x="315" width="8" height="150" />
-            <rect x="360" width="8" height="150" />
-            <rect x="405" width="8" height="150" />
-            <rect x="445" width="8" height="150" />
-            <rect x="500" width="8" height="150" />
-            <rect x="535" width="8" height="150" />
-            <rect x="575" width="8" height="150" />
-            <rect x="625" width="8" height="150" />
-            <rect x="690" height="150" width="8" />
-            <rect x="735" height="150" width="8" />
-            <rect x="800" height="150" width="8" />
-            <rect x="855" height="150" width="8" />
-            <rect x="915" height="150" width="8" />
-            <rect x="970" height="150" width="8" />
-            <rect x="1030" height="150" width="8" />
-            <rect x="1090" height="150" width="8" />
-            <rect x="1155" height="150" width="8" />
-            <rect x="1215" height="150" width="8" />
-            <rect x="1280" height="150" width="8" />
-            <rect x="1340" height="150" width="8" />
+
+            <!-- Long Gap -->
+            
+            <!-- Cluster 3 (Triple) -->
+            <rect x="420" width="8" height="150" />
+            <rect x="435" width="8" height="150" />
+            <rect x="450" width="8" height="150" />
+
+            <!-- Gap -->
+
+            <!-- Cluster 4 (Single/Sparse) -->
+            <rect x="670" width="8" height="150" />
+            <rect x="820" width="8" height="150" />
+
+            <!-- Gap -->
+
+            <!-- Cluster 5 (Dense) -->
+            <rect x="980" width="8" height="150" />
+            <rect x="1000" width="8" height="150" />
+            <rect x="1020" width="8" height="150" />
+            <rect x="1040" width="8" height="150" />
+
+            <!-- Gap -->
+
+            <!-- Cluster 6 (Double) -->
+            <rect x="1230" width="8" height="150" />
+            <rect x="1250" width="8" height="150" />
         </g>
 
         <!-- 
-            LAYER 2: The Macro-Wave (Very Broad/Slow)
-            This creates the primary flow across the whole screen.
+            LAYER 2: The Macro-Wave (Slow, Broad Flow)
+            This provides the "horizon" line across the data.
         -->
         <path d="M0,100 C300,50 400,150 720,100 C1040,50 1140,150 1440,100" 
             fill="none" stroke="#6366f1" stroke-width="3" stroke-linecap="round" />
 
         <!-- 
-            LAYER 3: The Mid-Frequency Wave (Moderate Movement)
-            Adds a secondary layer of complexity.
+            LAYER 3: The Mid-Frequency Wave (Complex Texture)
+            This interacts with the clusters above.
         -->
         <path d="M0,100 C150,180 250,20 450,100 C650,180 750,20 1000,100 C1150,180 1250,20 1440,100" 
             fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.6" stroke-linecap="round" />
 
         <!-- 
-            LAYER 4: The High-Frequency "Texture" (Fast/Small)
-            Provides detail and makes the wave look like a complex signal.
+            LAYER 4: The High-Frequency "Noise" (Detail)
         -->
         <path d="M0,100 Q120,50 240,100 T480,100 T720,100 T960,100 T1200,100 T1440,100" 
             fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4" stroke-linecap="round" />
