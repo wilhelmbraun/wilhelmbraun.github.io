@@ -55,35 +55,41 @@
         <a href="https://orcid.org/0000-0002-9419-3311" class="bg-white border border-slate-200 text-slate-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">ORCID</a>
     </div>
 
-        <!-- The "Modulated Signal" Background Strip -->
-    <div class="relative w-full overflow-hidden opacity-30">
-        <!-- 
-            SVG Explanation:
-            The path below uses a combination of 'M' (move) and 'Q/C' (curves) to create a single, continuous line.
-            It simulates a "beat" frequency where the amplitude swells and contracts, 
-            looking like an LFP or EEG trace rather than a simple sine wave.
-        -->
-        <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
-            <path 
-                fill="none" 
-                stroke="#6366f1" 
-                stroke-width="3" 
-                stroke-linecap="round"
-                d="M0,100 C40,150 80,50 120,100 C160,150 200,50 240,100 C280,150 320,50 360,100 C400,150 440,50 480,100 C520,150 560,50 600,100 C640,150 680,50 720,100 C760,150 800,50 840,100 C880,150 920,50 960,100 C1000,150 1040,50 1080,100 C1120,150 1160,50 1200,100 C1240,150 1280,50 1320,100 C1360,150 1400,50 1440,100" 
-                stroke-dasharray="2,2" 
-                opacity="0.4" />
-            
-            <!-- The primary modulated wave (Single continuous path) -->
-            <path d="M0,100 Q30,150 60,100 T120,100 T180,100 T240,100 T300,100 T360,100 T420,100 T480,100 T540,100 T600,100 T660,100 T720,100 T780,100 T840,100 T900,100 T960,100 T1020,100 T1080,100 T1140,100 T1200,100 T1260,100 T1320,100 T1380,100 T1440,100" 
-            stroke="#6366f1" stroke-width="2" fill="none" />
+<!-- The "Broad Modulated Signal" Background Strip -->
+    <div class="relative w-full overflow-hidden opacity-40 border-y border-slate-100 py-8">
+        <svg viewBox="0 0 1600 300" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <!-- Background "Ghost" Trace (Provides the 'Broad' feel - a wider, fainter wave) -->
+            <path d="M0,150 Q400,50 800,150 T1600,150" fill="none" stroke="#cbd5e1" stroke-width="2" opacity="0.3"/>
 
-            <!-- The "Modulated Amplitude" overlay (Creates the swell effect) -->
-            <path d="M0,100 C150,180 300,20 450,100 C600,180 750,20 900,100 C1050,180 1200,20 1350,100" 
-            stroke="#8b5cf6" stroke-width="1.5" fill="none" opacity="0.6" />
+            <!-- The Primary Amplitude Modulated Wave (The "Carrier") -->
+            <path d="M0,150 C100,50 300,250 400,150 C500,50 700,250 800,150 C900,50 1100,250 1200,150 C1300,50 1500,250 1600,150" 
+                fill="none" stroke="#6366f1" stroke-width="3" />
 
-            <!-- A second high-frequency wave for texture -->
-            <path d="M0,100 Q20,80 40,100 T80,100 T120,100 T160,100 T200,100 T240,100 T280,100 T320,100 T360,100 T400,100 T440,100 T480,100 T520,100 T560,100 T600,100 T640,100 T680,100 T720,100 T760,100 T800,100 T840,100 T880,100 T920,100 T960,100 T1000,100 T1040,100 T1080,100 T1120,100 T1160,100 T1200,100 T1240,100 T1280,100 T1320,100 T1360,100 T1400,100 T1440,100" 
-            stroke="#a78bfa" stroke-width="1" fill="none" />
+            <!-- The "Rate-Modulated Spikes" -->
+            <!-- These are clusters of vertical lines. Notice how they only appear/cluster where the curve peaks. -->
+            <g fill="none" stroke="#8b5cf6" stroke-width="1.5">
+                <!-- Cluster 1 (High Amplitude) -->
+                <line x1="200" y1="90" x2="200" y2="130" />
+                <line x1="210" y1="85" x2="210" y2="125" />
+                <line x1="220" y1="100" x2="220" y2="140" />
+                <line x1="235" y1="80" x2="235" y2="120" />
+                <line x1="250" y1="95" x2="250" y2="135" />
+                <line x1="265" y1="110" x2="265" y2="150" />
+                <!-- Gap (Low Amplitude) -->
+                <line x1="480" y1="140" x2="480" y2="150" />
+                <line x1="500" y1="138" x2="500" y2="152" />
+                <!-- Cluster 2 (High Amplitude) -->
+                <line x1="780" y1="80" x2="780" y2="120" />
+                <line x1="795" y1="75" x2="795" y2="115" />
+                <line x1="810" y1="90" x2="810" y2="130" />
+                <line x1="825" y1="85" x2="825" y2="125" />
+                <line x1="840" y1="100" x2="840" y2="140" />
+                <!-- Cluster 3 (High Amplitude) -->
+                <line x1="1180" y1="90" x2="1180" y2="130" />
+                <line x1="1195" y1="85" x2="1195" y2="125" />
+                <line x1="1210" y1="100" x2="1210" y2="140" />
+                <line x1="1225" y1="80" x2="1225" y2="120" />
+            </g>
         </svg>
     </div>
 </div>
